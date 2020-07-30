@@ -8,6 +8,9 @@ import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { DiscordComponent } from './discord/discord.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ScrollingImageComponent } from './scrolling-image/scrolling-image.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { DiscordComponent } from './discord/discord.component';
     SignupComponent,
     MembersComponent,
     AboutUsComponent,
-    DiscordComponent
+    DiscordComponent,
+    HeaderComponent,
+    FooterComponent,
+    ScrollingImageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+	margin: 0px;
+	padding: 0px;
+}
+#Content{
+	height: auto;
+	clear: both;
+	overflow: auto;
+}
+#ContentLeft{
+	width: 180px;
+	float: left;
+}
+#ContentRight{
+	width: 680px;
+	float: right;
+}
+h1{
+	margin: 0px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	font-weight: lighter;
+}
+.StyleTextField{
+	border: 1px solid #666666;
+	border-radius: 6px;
+	width: 200px;
+	height: 35px;
+}
+.backround{
+	background-color:#212121;
+}
