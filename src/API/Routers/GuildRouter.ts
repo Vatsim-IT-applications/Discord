@@ -1,7 +1,7 @@
 import { Router, Request, Response, Application } from 'express'
 import { AkairoClient } from 'discord-akairo'
 import { Guild } from 'discord.js'
-import { key } from '../../config'
+import { key } from '../../../config'
 
 export default class GuildRouter{
     protected app: Application;

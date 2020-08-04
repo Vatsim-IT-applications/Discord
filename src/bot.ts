@@ -1,4 +1,4 @@
-import { prefix, owners, token } from "./config"
+import { prefix, owners, token } from "../config"
 import{ AkairoClient, CommandHandler, ListenerHandler } from "discord-akairo";
 import { join } from "path";
 import { Message } from "discord.js";
