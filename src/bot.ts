@@ -18,10 +18,10 @@ interface BotOptions{
 export default class BotClient extends AkairoClient{
   public config: BotOptions;
   public listenerHandler: ListenerHandler = new ListenerHandler(this, {
-    directory: join(__dirname, "..", "listeners")
+    directory: join(__dirname, ".", "listeners")
   });
   public commandHandler: CommandHandler = new CommandHandler(this, {
-    directory: join(__dirname, "..", "commands"),
+    directory: join(__dirname, ".", "commands"),
     prefix,
     allowMention: true,
     defaultCooldown: 6e4,
@@ -31,7 +31,7 @@ export default class BotClient extends AkairoClient{
     super({
       ownerID: config.owners
     })
-    this.config
+    this.config = config
   }
   private init(): void {
     this.commandHandler.useListenerHandler(this.listenerHandler);
@@ -45,6 +45,7 @@ export default class BotClient extends AkairoClient{
   }
   public async start(): Promise<string>{
     await this.init();
-    return this.login(this.config.token);
+    let token = this.config.token;
+    return this.login(token);
   }
 };

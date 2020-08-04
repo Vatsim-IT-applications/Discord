@@ -1,4 +1,5 @@
 import { Listener } from "discord-akairo";
+import API from '../../API/api'
 
 export default class Ready extends Listener{  
     public constructor(){
@@ -10,6 +11,7 @@ export default class Ready extends Listener{
     }
 
     public exec(): void{
-        console.log(`${this.client.user.tag} is now online and ready to use`)
+        console.log(`${this.client.user.username} is now online and ready to use`)
+        new API(this.client).start();
     }
 }
