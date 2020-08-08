@@ -1,6 +1,5 @@
 import { Command } from 'discord-akairo'
 import { Message } from 'discord.js'
-import { promises } from 'fs'
 
 export default class TestCommand extends Command{  
     public constructor(){

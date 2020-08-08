@@ -18,12 +18,15 @@ export default class GuildRouter{
         this.router.get("/v1/get/guild/:id", (req: Request, res: Response)=>{
             const guild: Guild = this.client.guilds.cache.get(req.params.id);
             if(!guild) return res.status(404).send({message: "This sever id on discord could not be found or the bot is not part of the sever that you are tying to get the request from"});
-            return res.status(200).send({
+            return res.status(201).send({
                 name: guild.name,
-                owner: guild.owner.user.tag,
-                members: guild.memberCount
-            })
-        })
+                owner: guild.owner.user.username,
+                owner_id: guild.owner.user.id,
+                members: guild.memberCount,
+                Reagion: guild.region,
+                Joined_at: `I joined this server at ${guild.joinedAt}`
+            }).status(200);
+        });
         /// https://localhost:8888/v1/post/guild-name/5545454587854
         this.router.post('/v1/post/guild-name/:id', (req: Request, res: Response)=>{
             if(req.headers.authorization !== key) return res.status(401).send({message: "You do not have access to this page and will not be able to compleat this task"})
@@ -35,7 +38,7 @@ export default class GuildRouter{
 
             guild.setName(req.body.name)
 
-            return res.status(201).send({message: `${req.body} Guild name has been changed`},)
+            return res.status(201).send({message: `${guild} Guild name has been changed to ${req.body.name}`},)
         })
     }
 }
