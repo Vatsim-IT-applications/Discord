@@ -1,7 +1,6 @@
 import { guest, guest_role_channel, newUser, userTickets, guest_role_message } from '../../../config'
 import { Listener } from 'discord-akairo'
 const discord = require('discord.js');
-const client = new discord.Client();
 
 export default class MessageReaction extends Listener{
     public constructor(){
@@ -12,6 +11,7 @@ export default class MessageReaction extends Listener{
         })
     }
     public async exec(payload): Promise<void>{
+        const client = new discord.Client();
         if(payload.t === 'MESSAGE_REACTION_ADD') { // Check if the event name is MESSAGE_REACTION_ADD
             console.log(payload)
             if(payload.d.emoji.name === 'ticketreact') // If the emoji is ticketreact
